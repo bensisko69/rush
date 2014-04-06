@@ -9,7 +9,16 @@
 		<header>
 			<div id="div_logo"><a href="../index.php"><img id="logo" src="../img/42.jpg" title="logo" alt="logo" /></a></div>
 			<div id="title"><h1>Starcraft shop.com</h1></div>
+			<div id="client2">
 			<div id="div_client" ><a href="../inscription/inscription.php"><img id="client" src="../img/client.png" title="client" alt="client"></a></div>
+			<div id="bonjour">
+			<?php
+				session_start();
+				if (isset($_SESSION['login']))
+					echo "<p id=\"color_bonjour\" >Bonjour : " . $_SESSION['login'] . "</p>\n";
+			?>
+			</div>
+			</div>
 		</header>
 		<section>
 			<div id="menus_left">
