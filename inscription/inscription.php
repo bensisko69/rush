@@ -12,8 +12,13 @@
 			<div id="div_client" ><a href="inscription.php"><img id="client" src="../img/client.png" title="client" alt="client"></a></div>
 			<?php
 				session_start();
-				if (isset($_SESSION['login']))
-					echo "<p>Bonjour : " . $_SESSION['login'] . "</p>\n";
+				if (isset($_SESSION['connect']))
+				{
+					$infos = $_SESSION['connect'];
+					echo "<p>Bonjour : " . $infos['login'] . "</p>\n";
+					if ($infos['is_admin'])
+						echo "<p><a href=\"../admin/admin.php\">administration</a></p>";
+				}
 			?>
 		</header>
 		<section>

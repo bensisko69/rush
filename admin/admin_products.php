@@ -38,29 +38,28 @@ function dump_products($products)
 	file_put_contents($PRODUCT_LIST_FILE, $csv);
 }
 
-if ($_POST['submit'] == "OK")
-{
-	$actions = Array(
-		"set" => "product_set",
-		"del" => "product_remove"
-	);
+$actions = Array(
+	"set" => "product_set",
+	"del" => "product_remove"
+);
 
-	session_start();
-	if ($_SESSION['connect'] && $_SESSION['connect']['is_admin'])
+session_start();
+print_r($_POST);
+if ($_SESSION['connect'] && $_SESSION['connect']['is_admin'])
+{
+	$action_type = $_POST['action'];
+	$action = $actions[$action_type];
+	if ($action)
 	{
-		$action_type = $_POST['action'];
-		$action = $actions[$action_type];
-		if ($action)
-		{
-			$db = file_get_contents($PRODUCT_DB_FILE);
-			$products = unserialize($db);
-			$action($products);
-			file_put_contents($PRODUCT_DB_FILE, serialize($products));
-			if ($_POST['dump_csv'] == "TRUE")
-				dump_products($products);
-		}
+		$db = file_get_contents($PRODUCT_DB_FILE);
+		$products = unserialize($db);
+		$action($products);
+		file_put_contents($PRODUCT_DB_FILE, serialize($products));
+		if ($_POST['dump_csv'] == "TRUE")
+			dump_products($products);
+		header("Location: admin.php");
 	}
-	else
-		echo "You are not logged in as an administrator\n";
 }
+else
+	echo "You are not logged in as an administrator\n";
 ?>
