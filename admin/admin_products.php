@@ -45,16 +45,22 @@ if ($_POST['submit'] == "OK")
 		"del" => "product_remove"
 	);
 
-	$action_type = $_POST['action'];
-	$action = $actions[$action_type];
-	if ($action)
+	session_start();
+	if ($_SESSION['connect'] && $_SESSION['connect']['is_admin'])
 	{
-		$db = file_get_contents($PRODUCT_DB_FILE);
-		$products = unserialize($db);
-		$action($products);
-		file_put_contents($PRODUCT_DB_FILE, serialize($products));
-		if ($_POST['dump_csv'] == "TRUE")
-			dump_products($products);
+		$action_type = $_POST['action'];
+		$action = $actions[$action_type];
+		if ($action)
+		{
+			$db = file_get_contents($PRODUCT_DB_FILE);
+			$products = unserialize($db);
+			$action($products);
+			file_put_contents($PRODUCT_DB_FILE, serialize($products));
+			if ($_POST['dump_csv'] == "TRUE")
+				dump_products($products);
+		}
 	}
+	else
+		echo "You are not logged in as an administrator\n";
 }
 ?>
