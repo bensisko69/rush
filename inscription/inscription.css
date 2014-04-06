@@ -1,0 +1,187 @@
+body
+{
+	background-color: grey;
+	width: 90%;
+	margin: auto;
+}
+
+/*
+**header
+*/
+header
+{
+	width: 100%;
+	height: 200px;
+	background: white;
+	border-radius: 20px;
+}
+
+h1
+{
+	color: grey;
+	font-size: 90px;
+	text-align: center;
+	text-decoration: overline;
+}
+
+#title
+{
+	height: 100%;
+	width: 80%;
+	float: left;
+
+}
+
+#div_logo
+{
+	height: 200px;
+	width: 200px;
+	margin-left: 1%;
+	float: left;
+}
+
+#logo{width: 200px;}
+
+#div_client
+{
+	height: 90px;
+	width: 90px;
+	margin-left: 1990px;
+	padding-top: 50px;
+	margin-top: 20px;
+}
+
+#client{height: 90px;}
+
+/*
+**Menus_left
+*/
+#menus_left
+{
+	float: left;
+	width: 200px;
+	height: 800px;
+	border-radius: 20px;
+	background: white;
+}
+
+#panier
+{
+	margin-top: 25px;
+	height: 17%;
+	width: 45%;
+	margin-left: 29%;
+}
+
+#size_vet{height: 95%;}
+
+.vet
+{
+	height: 17%;
+	margin-left: 39px;
+	margin-top: 45px;
+}
+
+
+#size_shoes{height: 95%;}
+
+#p_panier
+{
+	text-indent: 5px;
+	margin-top: 7px;
+	color: grey;
+	text-align: center;
+	font-size: 15x;
+	text-decoration: underline;
+}
+
+#p_chem
+{
+	text-indent: 5px;
+	margin-top: 7px;
+	color: grey;
+	text-align: center;
+	font-size: 15x;
+	text-decoration: underline;
+}
+
+#p_pant
+{
+	text-indent: 5px;
+	margin-top: 7px;
+	color: grey;
+	text-align: center;
+	font-size: 15x;
+	text-decoration: underline;
+}
+
+#p_chau
+{
+	text-indent: 5px;
+	margin-top: 7px;
+	color: grey;
+	text-align: center;
+	font-size: 15x;
+	text-decoration: underline;
+}
+.p_img:hover
+{
+	color: red;
+}
+
+/*
+**
+*/
+#menus_center
+{
+	margin-top: 20px;
+	height: 800px;
+	margin-left: 230px;
+	background: white;
+	border-radius: 20px;
+}
+
+fieldset
+{
+	padding-top: 10px;
+	margin: auto;
+	border-radius: 20px;
+	width: 490px;
+}
+
+legend
+{
+	font-size: 25px;
+	color: #8cc124;
+}
+#label_name {padding-right: 37px;}
+#label_surname {padding-right: 56px;}
+#label_mail {padding-right: 48px;}
+.label_pseudo {padding-right: 40px;}
+#label_civilite{padding-right: 36px;}
+
+.ok
+{
+	width: 80px; 
+	margin-left: 200px; 
+	margin-top: 10px;
+}
+/*
+**footer
+*/
+footer
+{
+	margin-top: 15px;
+	background: white;
+	border-radius: 20px;
+}
+
+
+h2
+{
+	font-size: 25px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: grey;
+}
