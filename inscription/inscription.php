@@ -33,7 +33,7 @@
 					<fieldset>
 						<legend>Déjà inscrit</legend>
 						<label class="label_pseudo" >Votre pseudo :</label><input type="text" name="login" value="" size="30" placeholder="Ex : ZAZ"><br/>
-						<label>Votre mot de passe</label> : <input type="text" name="password" value="" size="30" placeholder="Ex : 12345"><br/>
+						<label class="label_passe" >Votre mot de passe</label> : <input type="text" name="password" value="" size="30" placeholder="Ex : 12345"><br/>
 						<input class="ok" type="image" src="../img/envoyer.png" name="connect" value="OK" />
 					</fieldset>
 				</form>
@@ -48,11 +48,11 @@
 									<option value="mademoiselle">Mademoiselle</option>
 								</optgroup>
 							</select><br/>
-						<label id="label_name">Votre prénom :</label><input type="text" name="name" value="" size="30" placeholder="Ex : pierre"><br/>
-						<label id="label_surname">Votre nom :</label><input type="text" name="surname" value="" size="30" placeholder="Ex : richard"><br/>
-						<label id="label_mail">Votre Email :</label><input type="email" name="email" value="" size="30" placeholder="Ex : richard@gmail.com"><br/>
+						<label id="label_name" >Votre prénom :</label><input type="text" name="name" value="" size="30" placeholder="Ex : pierre"><br/>
+						<label id="label_surname" >Votre nom :</label><input type="text" name="surname" value="" size="30" placeholder="Ex : richard"><br/>
+						<label id="label_mail" >Votre Email :</label><input type="email" name="email" value="" size="30" placeholder="Ex : richard@gmail.com"><br/>
 						<label class="label_pseudo" >Votre pseudo :</label><input type="text" name="login" value="" size="30" placeholder="Ex : ZAZ"><br/>
-						<label>Votre mot de passe</label> : <input  type="text" name="password" value="" size="30" placeholder="Ex : 12345"><br/>
+						<label class="label_passe" >Votre mot de passe</label> : <input  type="text" name="password" value="" size="30" placeholder="Ex : 12345"><br/>
 						<input class="ok" type="image" src="../img/envoyer.png" name="register_new" value="OK" />
 					</fieldset>
 				</form>

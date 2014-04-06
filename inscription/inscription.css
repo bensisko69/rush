@@ -2,6 +2,7 @@ body
 {
 	background-color: purple;
 	width: 90%;
+	min-width: 2291px;
 	margin: auto;
 }
 
@@ -21,36 +22,43 @@ h1
 	color: purple;
 	font-size: 90px;
 	text-align: center;
-
+	margin-top: 50px;
+	padding: 0;
 }
 
 #title
 {
-	height: 100%;
-	width: 80%;
-	float: left;
-}
-#div_logo
-{
+	display: inline-block;
 	height: 200px;
-	width: 200px;
-	margin-left: 1%;
-	float: left;
+	width: 80%;
+	vertical-align: top;
 }
 
-#logo{width: 300px;}
+#div_logo
+{
+	display: inline-block;
+	height: 200px;
+	width: 300px;
+
+}
+
+#logo
+{
+	width: 300px;
+}
 
 #div_client
 {
-	height: 90px;
-	width: 90px;
-	margin-left: 1990px;
-	padding-top: 35px;
-	margin-top: 20px;
+	vertical-align: top;
+	height: 200px;
+	width: 150px;
+	display: inline-block;
+	text-align: center;
 }
 
 #client
 {
+	margin-top: 35px;
 	border: 1px solid white;
 	height: 130px;
 }
@@ -126,7 +134,8 @@ legend
 #label_surname {color: purple;padding-right: 56px;}
 #label_mail {color: purple;padding-right: 48px;}
 .label_pseudo {color: purple; padding-right: 40px;}
-#label_civilite{color: purple;padding-right: 36px;}
+#label_civilite{color: purple; padding-right: 36px;}
+.label_passe{color: purple;}
 
 .ok
 {
