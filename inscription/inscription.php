@@ -12,8 +12,14 @@
 			<div id="div_client" ><a href="inscription.php"><img id="client" src="../img/client.png" title="client" alt="client"></a></div>
 			<?php
 				session_start();
-				if (isset($_SESSION['login']))
-					echo "<p>Bonjour : " . $_SESSION['login'] . "</p>\n";
+				if (isset($_SESSION['connect']))
+				{
+					$name = $_SESSION['connect']['name'];
+					$surname = $_SESSION['connect']['surname'];
+					$email = $_SESSION['connect']['email'];
+					$phone = $_SESSION['connect']['phone'];
+					echo "<p>Bonjour $name $surname ($email) $phone</p>\n";
+				}
 			?>
 		</header>
 		<section>
@@ -32,7 +38,7 @@
 						<input class="ok" type="image" src="../img/envoyer.png" name="connect" value="OK" />
 					</fieldset>
 				</form>
-				<form method="post" action="login.php">
+				<form method="post" action="register.php">
 					<fieldset>
 						<legend>Pas encore inscrit</legend>
 						<label id="label_civilite" >Votre civilité ?</label>
@@ -46,19 +52,32 @@
 						<label id="label_name">Votre prénom :</label><input type="text" name="name" value="" size="30" placeholder="Ex : pierre"><br/>
 						<label id="label_surname">Votre nom :</label><input type="text" name="surname" value="" size="30" placeholder="Ex : richard"><br/>
 						<label id="label_mail">Votre Email :</label><input type="email" name="email" value="" size="30" placeholder="Ex : richard@gmail.com"><br/>
+						<label id="label_tel">Votre Téléphone :</label><input type="tel" name="phone" value="" size="30" placeholder="Ex : 0123456789"><br/>
 						<label class="label_pseudo" >Votre pseudo :</label><input type="text" name="login" value="" size="30" placeholder="Ex : ZAZ"><br/>
 						<label>Votre mot de passe</label> : <input  type="text" name="password" value="" size="30" placeholder="Ex : 12345"><br/>
-						<input class="ok" type="image" src="../img/envoyer.png" name="register_new" value="OK" />
+						<input class="ok" type="image" src="../img/envoyer.png" name="register" value="OK" />
 					</fieldset>
 				</form>
-				<form method="post" action="login.php">
-					<fieldset>
-						<legend>Désinscription</legend>
-						<label class="label_pseudo" >Votre pseudo :</label><input type="text" name="login" value="" size="30" placeholder="Ex : ZAZ"><br/>
-						<label>Votre mot de passe</label> : <input type="text" name="passwd" value="" size="30" placeholder="Ex : 12345"><br/>
-						<input class="ok" type="image" src="../img/envoyer.png" value="Envoyer" />
-					</fieldset>
-				</form>
+				<?php
+					session_start();
+					if (isset($_SESSION['connect']))
+					{
+						// Logout
+						echo '<form method="post" action="logout.php">';
+						echo '<fieldset>';
+						echo '<legend>Logout</legend>';
+						echo '<input type="submit" value="logout" name="action"/>';
+						echo '</fieldset>';
+						echo '</form>';
+						// Unsubscribe
+						echo '<form method="post" action="unregister.php">';
+						echo '<fieldset>';
+						echo '<legend>Unsubscribe</legend>';
+						echo '<input type="submit" value="unsubscribe" name="action"/>';
+						echo '</fieldset>';
+						echo '</form>';
+					}
+				?>
 			</div>
 		</section>
 		<footer>
